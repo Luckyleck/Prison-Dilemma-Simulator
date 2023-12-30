@@ -1,4 +1,4 @@
-import { titForTat as strat1 } from "./tit_for_tat.mjs";
+import { move as strat1 } from "./tit_for_tat.mjs";
 import { move as strat2 } from "./strat2.mjs";
 
 class Simulator {
@@ -17,8 +17,8 @@ class Simulator {
         let strat2LastMove = null;
         let i = 0;
         while (i < this.rounds) {
-            const result1 = this.makeMove(this.strat1, strat2LastMove);
-            const result2 = this.makeMove(this.strat2, strat1LastMove);
+            const result1 = this.makeMove(this.strat1, strat2LastMove, i);
+            const result2 = this.makeMove(this.strat2, strat1LastMove, i);
 
             strat1LastMove = result1;
             strat2LastMove = result2;
@@ -35,20 +35,20 @@ class Simulator {
 
     updateScores(result1, result2) {
         if ([result1, result2].every(val => val === 1)) {
-            this.strat1Score += 10;
-            this.strat2Score += 10;
-        } else if([result1, result2].every(val => val === -1)) {
-            this.strat1Score += 2;
-            this.strat2Score += 2;
-        } else if(result1 === -1 && result2 === 1) {
             this.strat1Score += 5;
-        } else if(result1 === 1 && result2 === -1) {
             this.strat2Score += 5;
+        } else if([result1, result2].every(val => val === -1)) {
+            this.strat1Score += 1;
+            this.strat2Score += 1;
+        } else if(result1 === -1 && result2 === 1) {
+            this.strat1Score += 3;
+        } else if(result1 === 1 && result2 === -1) {
+            this.strat2Score += 3;
         }
     }
 
-    makeMove(strat, lastMove) {
-        return strat(lastMove);
+    makeMove(strat, lastMove, round) {
+        return strat(lastMove, round);
     }
 
     printScores(score1, score2) { 
