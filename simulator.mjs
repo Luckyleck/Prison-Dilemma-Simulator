@@ -1,5 +1,5 @@
-import { move as strat1 } from "./tit_for_tat.mjs";
-import { move as strat2 } from "./strat2.mjs";
+import { move as strat1 } from "./strategies/tit_for_tat.mjs";
+import { move as strat2 } from "./strategies/strat2.mjs";
 
 class Simulator {
     constructor(rounds, strat1, strat2) {
