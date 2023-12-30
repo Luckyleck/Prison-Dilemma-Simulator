@@ -1,5 +1,5 @@
-import { tit_for_strat1 } from "./strat1.mjs";
-import { strat2 } from "./strat2.mjs";
+import { titForTat as strat1 } from "./tit_for_tat.mjs";
+import { move as strat2 } from "./strat2.mjs";
 
 class Simulator {
     constructor(rounds, strat1, strat2) {
