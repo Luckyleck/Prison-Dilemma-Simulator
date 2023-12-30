@@ -1,5 +1,5 @@
 import { move as strat1 } from "./strategies/tit_for_tat.mjs";
-import { move as strat2 } from "./strategies/strat2.mjs";
+import { move as strat2 } from "./strategies/strat1.mjs";
 
 class Simulator {
     constructor(rounds, strat1, strat2) {
@@ -62,7 +62,7 @@ class Simulator {
     }
 }
 
-const rounds = 10
+const rounds = 200
 const game = new Simulator(rounds, strat1, strat2);
 game.run();
-game.seeMoves();
+// game.seeMoves();
