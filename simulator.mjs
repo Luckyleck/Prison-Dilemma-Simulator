@@ -1,6 +1,10 @@
 import { move as strat1 } from "./strategies/tit_for_tat.mjs";
 import { move as strat2 } from "./strategies/strat1.mjs";
 
+const COOPERATE = 5;
+const DEFECT = 3;
+const BOTH_DEFECT = 1;
+
 class Simulator {
     constructor(rounds, strat1, strat2) {
         this.rounds = rounds
@@ -35,15 +39,15 @@ class Simulator {
 
     updateScores(result1, result2) {
         if ([result1, result2].every(val => val === 1)) {
-            this.strat1Score += 5;
-            this.strat2Score += 5;
+            this.strat1Score += COOPERATE;
+            this.strat2Score += COOPERATE;
         } else if([result1, result2].every(val => val === -1)) {
-            this.strat1Score += 1;
-            this.strat2Score += 1;
+            this.strat1Score += BOTH_DEFECT;
+            this.strat2Score += BOTH_DEFECT;
         } else if(result1 === -1 && result2 === 1) {
-            this.strat1Score += 3;
+            this.strat1Score += DEFECT;
         } else if(result1 === 1 && result2 === -1) {
-            this.strat2Score += 3;
+            this.strat2Score += DEFECT;
         }
     }
 
