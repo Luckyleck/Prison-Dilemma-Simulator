@@ -26,7 +26,7 @@ Create a strategy that will come out with the most amount of points after n amou
 
     1. Create a new file in the strategies folder with your strategy name, and be sure to use the .mjs extension to ensure that it will be treated as a module.
 
-    2. Implement your strategies within the move function, considering the opponent's last move and the current round.
+    2. Implement your strategies within the move function, considering the opponent's last move and the current round number.
 
 3. **Customize the main script:**
     1. Open `simulator.mjs` to set the number of rounds and import your strategy scripts.
