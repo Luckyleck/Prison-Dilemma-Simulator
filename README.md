@@ -55,6 +55,5 @@ import { move as strat1 } from "./tit_for_tat.mjs";
 import { move as strat2 } from "./strat2.mjs";
 ```
 
-Feel free to experiment with different strategies and parameters to analyze their performance in the Iterated Prisoner's Dilemma. Currently there is no requirement for 
-
+Feel free to experiment with different strategies and parameters to analyze their performance in the Iterated Prisoner's Dilemma.
 
